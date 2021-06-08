@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Reflection;
-using GlobalEnums;
 using Modding;
 using UnityEngine;
 
@@ -24,7 +22,7 @@ namespace Hkmote
         {
             Instance = this;
 
-            ModHooks.Instance.HeroUpdateHook += update;
+            ModHooks.HeroUpdateHook += update;
         }
 
         public void stopAnim() {
