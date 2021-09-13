@@ -11,7 +11,11 @@
     <AssemblyName>Hkmote</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <VanillaFiles>.\Vanilla</VanillaFiles>
+    <ModdingAPi>..\HollowKnight.Modding\OutputFinal</ModdingAPi>
+    <HollowKnightModsDirectory>..\linkedtoHKMods</HollowKnightModsDirectory>
     <TargetFrameworkProfile />
+
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,4 +63,8 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
   </PropertyGroup>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(HollowKnightModsDirectory)\Hkmote"/>
+    </Target>
 </Project>
